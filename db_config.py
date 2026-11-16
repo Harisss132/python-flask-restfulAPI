@@ -1,16 +1,18 @@
 from pymongo import MongoClient
 from pymongo.errors import PyMongoError
 
-MONGO_URI = "mongodb://127.0.0.1:27017"
+from config import Config
 
 client = MongoClient(
-    MONGO_URI,
-    ServerSelectionTimeoutMs=5000
+    Config.MONGO_URI,
+    serverSelectionTimeoutMS=5000
 )
 
 db = client["chapter3_db"]
 
 books_collection = db["books"]
+users_collection = db["users"]
+
 
 def test_connection():
     try:
