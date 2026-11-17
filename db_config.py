@@ -8,7 +8,7 @@ client = MongoClient(
     serverSelectionTimeoutMS=5000
 )
 
-db = client["chapter3_db"]
+db = client["chapter4_db"]
 
 books_collection = db["books"]
 users_collection = db["users"]
